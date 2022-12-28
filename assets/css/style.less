@@ -1,0 +1,31 @@
+@import "variable";
+@import "layout";
+
+html,body {
+  font-family: 'Noto Sans KR', sans-serif;
+  @media screen and (min-width: 1367px) and (max-width: 1680px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1366px) {
+    font-size: 14px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a9a9a9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Pollutant source analysis</title>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+    <script src="https://kit.fontawesome.com/f892748f4e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@600&display=swap"
+          rel="stylesheet">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/css/uikit.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+<div class="deck-ui">
+    <header>
+        <a href="index.html" class="title">Pollutant source analysis</a>
+        <a href="http://ecodata.co.kr/" class="logo_ecodata" target="_blank"></a>
+    </header>
+    <aside>
+        <ul>
+            <li><a href=""><i class="fa-solid fa-house"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-bookmark"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-map"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-chart-line"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-file-excel"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-ellipsis"></i></a></li>
+        </ul>
+    </aside>
+    <div class="deck-content">
+        <div class="uk-flex uk-flex-between type_upper">
+            <div class="left_info">
+                <!-- 실제 사용시에는 type_sample을 지우세요! -->
+                <div class="satellite type_sample"></div>
+                <div class="chart type01">
+                    <a href="#modal-sections" uk-toggle class="type_more"><i class="fa-solid fa-plus"></i></a>
+                    <div id="chart01" style="width: 100%; height: 100%;padding-top: 1rem"></div>
+                </div>
+                <div class="chart type02">
+                    <a href="#modal-sections" uk-toggle class="type_more"><i class="fa-solid fa-plus"></i></a>
+                    <div id="chart02" style="width: 100%; height: 100%"></div>
+                </div>
+            </div>
+            <div class="right_info">
+                <div class="data type_company">
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <thead>
+                        <tr>
+                            <th>Table Heading</th>
+                            <th>Table Heading</th>
+                            <th>Table Heading</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data type_com_info">
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <thead>
+                        <tr>
+                            <th>Table Heading</th>
+                            <th>Table Heading</th>
+                            <th>Table Heading</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_info">
+            <table class="uk-table uk-table-small uk-table-divider">
+                <thead>
+                <tr>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                    <th>Table Heading</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                    <td>Table Data</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="deck-bubble" style="top: 40%;left: 50%;transform: translate(-50%,-50%)" href="#modal-sections" uk-toggle>
+        <b>(주)다우환경</b>
+        <small>대기배출사업장, 비산배출사업장</small>
+        <span>석유화학제품 제조 (톨루엔, 벤젠)</span>
+    </div>
+
+    <!--  모달 모음  -->
+    <div id="modal-sections" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Modal Title</h2>
+            </div>
+            <div class="uk-modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="uk-modal-footer uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                <button class="uk-button uk-button-primary" type="button">Save</button>
+            </div>
+        </div>
+    </div>
+    <!--  모달 끝  -->
+</div>
+<div id="deck-container">
+</div>
+</body>
+
+<script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+        "initialViewState": {
+            "bearing": 0,
+            "latitude": 37.323,
+            "longitude": 126.732,
+            "maxZoom": 16,
+            "pitch": 45,
+            "zoom": 11
+        },
+        "layers": [
+            {
+                "@@type": "HeatmapLayer",
+                "autoHighlight": true,
+                "data": [
+                    {
+                        "emission": 0.0,
+                        "lat": 36.595426,
+                        "lon": 128.540402
+                    },
+                    {
+                        "emission": 0.3807311878421431,
+                        "lat": 36.315087,
+                        "lon": 128.698064
+                    },
+                ],
+                "elevationScale": 3,
+                "extruded": true,
+                "getFillColor": "@@=[255*emission, 15*emission,255]",
+                "getPosition": "@@=[lon, lat]",
+                "getRadius": 50,
+                "id": "4a38de78-01a7-447c-b598-8fe0eb3ffdba",
+                "pickable": true
+            },
+            {
+                "@@type": "LineLayer",
+                "autoHighlight": true,
+                "data": [
+                    {
+                        "Unnamed: 0": 0,
+                        "endlat": 37.30593888127011,
+                        "endlon": 126.78730920449786,
+                        "scwd": 1.0,
+                        "startlat": 37.296536,
+                        "startlon": 126.790713,
+                        "wd": 59.71718274975608
+                    },
+                    {
+                        "Unnamed: 0": 1,
+                        "endlat": 37.30535088127011,
+                        "endlon": 126.78748720449786,
+                        "scwd": 0.9946638034459141,
+                        "startlat": 37.295948,
+                        "startlon": 126.790891,
+                        "wd": 59.39852012494711
+                    },
+                    {
+                        "Unnamed: 0": 2,
+                        "endlat": 37.304994881270105,
+                        "endlon": 126.79568220449788,
+                        "scwd": 0.5166055735486011,
+                        "startlat": 37.295592,
+                        "startlon": 126.799086,
+                        "wd": 30.85022944514437
+                    }
+                ],
+                "getColor": "@@=[200*scwd, 200, 120]",
+                "getSourcePosition": "@@=[startlon, startlat]",
+                "getTargetPosition": "@@=[endlon, endlat]",
+                "id": "9657ca49-7d2f-4d08-ae91-e5dcd07a8e71",
+                "pickable": true
+            }
+        ],
+        "mapProvider": "carto",
+        "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+        "views": [
+            {
+                "@@type": "MapView",
+                "controller": true
+            }
+        ]
+    };
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+        container,
+        jsonInput,
+        tooltip,
+        customLibraries,
+        configuration
+    });
+
+</script>
+<script>
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawTypes01);
+    google.charts.setOnLoadCallback(drawTypes02);
+
+    function drawTypes01() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Dogs');
+        data.addColumn('number', 'Cats');
+
+        data.addRows([
+            [0, 0, 0], [1, 10, 5], [2, 23, 15], [3, 17, 9], [4, 18, 10], [5, 9, 5],
+            [6, 11, 3], [7, 27, 19], [8, 33, 25], [9, 40, 32], [10, 32, 24], [11, 35, 27],
+            [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+            [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+            [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+            [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+            [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+            [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+            [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+            [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+            [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+            [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+        ]);
+
+        var options = {
+            chartArea: {
+                width: '75%'
+            },
+            title: 'Chart Title',
+            titleTextStyle: {
+                color: '#fff',
+                fontSize: 15,
+            },
+            hAxis: {
+                gridlines: {
+                    color: "transparent",
+                },
+                baselineColor: 'transparent',
+                textStyle: {
+                    color: '#999',
+                },
+            },
+            vAxis: {
+                gridlines: {
+                    color: "#2e2e2e",
+                    count: 2
+                },
+                minorGridlines : {
+                    color: "#2e2e2e",
+                },
+                baselineColor: 'transparent',
+                textStyle: {
+                    color: '#999',
+                },
+            },
+            colors: ['#6979F8', '#CDD2FD'],
+            series: {
+                1: {curveType: 'function'}
+            },
+            legend: {
+                position: 'top',
+                alignment: 'end',
+                textStyle: {
+                    color: '#fff',
+                }
+            },
+            backgroundColor: 'transparent',
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart01'));
+        chart.draw(data, options);
+    }
+    function drawTypes02() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Dogs');
+        data.addColumn('number', 'Cats');
+
+        data.addRows([
+            [0, 0, 0], [1, 10, 5], [2, 23, 15], [3, 17, 9], [4, 18, 10], [5, 9, 5],
+            [6, 11, 3], [7, 27, 19], [8, 33, 25], [9, 40, 32], [10, 32, 24], [11, 35, 27],
+            [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+            [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+            [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+            [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+            [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+            [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+            [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+            [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+            [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+            [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72],
+        ]);
+
+        var options = {
+            chartArea: {
+                width: '75%'
+            },
+            hAxis: {
+                gridlines: {
+                    color: "transparent",
+                },
+                baselineColor: 'transparent',
+                textStyle: {
+                    color: '#999',
+                },
+            },
+            vAxis: {
+                gridlines: {
+                    color: "#2e2e2e",
+                    count: 2
+                },
+                minorGridlines : {
+                    color: "#2e2e2e",
+                },
+                baselineColor: 'transparent',
+                textStyle: {
+                    color: '#999',
+                },
+            },
+            colors: ['#6979F8', '#CDD2FD'],
+            series: {
+                1: {curveType: 'function'}
+            },
+            legend: {
+                position: 'none'
+            },
+            backgroundColor: 'transparent',
+            crosshair: {
+                color: '#6979F8',
+                trigger: 'selection'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart02'));
+        chart.draw(data, options);
+        chart.setSelection([{row: 28, column: 2}]);
+    }
+</script>
+</html>
